@@ -14,7 +14,7 @@ public class LoginPage {
 		PageFactory.initElements(rdriver,this);
 	}
 	
-	@FindBy(xpath = "//div[@class='hm-MainHeaderRHSLoggedOutMed_Login']")
+	@FindBy(xpath = "//div[contains(@class,'hm-MainHeaderRHSLoggedOutWide_Login')][normalize-space()='Log In']")
 	WebElement clickLogin;
 	
 	@FindBy(xpath = "//input[@placeholder='Username']")
@@ -26,8 +26,8 @@ public class LoginPage {
 	@FindBy(className = "lms-LoginButton_Text")
 	WebElement btnLogin;
 	
-	public WebElement clicklogin() {
-		return clickLogin;
+	public void clicklogin() {
+		 clickLogin.click();
 	}
 	
 	public void setUserName(String uname) {
