@@ -1,6 +1,8 @@
 package testCases;
 
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,7 +15,7 @@ public class BaseClass {
 	public String uname="ILAVARASU365";
 	public String pass="Hammer777$";
 	public static WebDriver driver;
-	
+	public static Logger loggs;
 	
 	@BeforeClass
 	public void setUp() {
@@ -21,6 +23,8 @@ public class BaseClass {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
+		loggs = Logger.getLogger("Bet365");
+		PropertyConfigurator.configure("Log4j.properties");
 		
 	}
 	
