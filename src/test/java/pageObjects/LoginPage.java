@@ -8,12 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 	
 	WebDriver ldriver;
-	
+	//Constructor
 	public LoginPage(WebDriver rdriver){
 		ldriver= rdriver;
 		PageFactory.initElements(rdriver,this);
 	}
 	
+	//@FindBy xpaths and WebElement
 	@FindBy(xpath = "//div[contains(@class,'hm-MainHeaderRHSLoggedOutWide_Login')][normalize-space()='Log In']")
 	WebElement clickLogin;
 	
@@ -26,6 +27,7 @@ public class LoginPage {
 	@FindBy(className = "lms-LoginButton_Text")
 	WebElement btnLogin;
 	
+	//Methods
 	public void clicklogin() {
 		 clickLogin.click();
 	}
